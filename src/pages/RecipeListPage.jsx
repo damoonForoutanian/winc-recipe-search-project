@@ -6,7 +6,7 @@ export const RecipeListPage = () => {
   console.log(data.hits[0].recipe.label);
 
   return (
-    <Center h="100vh" flexDir="column">
+    <Center h='100vh' flexDir='column'>
       <Heading>Your Recipe App</Heading>
     </Center>
   );
