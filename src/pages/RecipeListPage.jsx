@@ -34,8 +34,8 @@ export const RecipeListPage = ({ onRecipeClick }) => {
         ) : (
           <Grid
             templateColumns='repeat(auto-fill, minmax(250px, 1fr))'
-            gap={5}
-            mt={3}
+            gap={8}
+            mt={8}
           >
             {filteredRecipes.map((hit, index) => (
               <RecipeItemCard
