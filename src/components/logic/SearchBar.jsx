@@ -13,6 +13,7 @@ export const SearchBar = ({ value, onChange }) => {
       color='#7299E6'
       border='none'
       borderRadius='md'
+      boxShadow='md'
     />
   );
 };
