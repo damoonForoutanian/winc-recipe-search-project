@@ -1,4 +1,4 @@
-import { Box, Image, Heading, Flex, IconButton } from '@chakra-ui/react';
+import { Box, Image, Heading, Text, Flex, IconButton } from '@chakra-ui/react';
 import { Card } from '../components/ui/Card';
 import { Labels } from '../components/logic/Labels';
 import { ArrowBackIcon } from '@chakra-ui/icons';
@@ -12,56 +12,61 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
             icon={<ArrowBackIcon />}
             onClick={onBack}
             aria-label='Go Back'
+            bg='transparent'
+            color='#2563DA'
+            size='lg'
           />
           <Image
             src='/src/assets/WincAcademy-logo.png'
-            h='34px'
+            h='55px'
             alt='Winc Academy'
           />
         </Flex>
-        <Image src={recipe.image} objectFit='cover' borderRadius='md' mt={5} />
+        <Flex justifyContent='center' mt={3}>
+          <Image
+            src={recipe.image}
+            alt={recipe.label}
+            objectFit='cover'
+            borderRadius='md'
+            mt={5}
+            h={{ base: '37vh', md: '55vh' }}
+            maxH={610}
+          />
+        </Flex>
         <Flex justifyContent='space-between' mt={5}>
-          <Box>
-            <Heading size='md' color='gray.500'>
+          <Box mr={3}>
+            <Heading size='sm' color='gray.500' mb={3}>
               {recipe.mealType?.join(', ').toUpperCase()}
             </Heading>
-            <Heading size='lg' isTruncated>
+            <Heading size='lg' isTruncated my={5}>
               {recipe.label}
             </Heading>
             <Box mt={2}>
-              <Heading size='sm'>
-                Total cooking time: <strong>{recipe.totalTime} Minutes</strong>
+              <Text size='sm'>Cooking time:</Text>
+              <Heading size='sm' fontWeight='normal'>
+                <strong>{recipe.totalTime} Minutes</strong>
               </Heading>
-              <Heading size='sm'>
+              <Text size='sm' mt={2}>
                 Servings: <strong>{recipe.yield}</strong>
-              </Heading>
-              <Heading size='md' mt={4}>
+              </Text>
+              <Heading size='md' mt={5} mb={3}>
                 Ingredients:
               </Heading>
               {recipe.ingredientLines.map((ingredient, index) => (
-                <Box key={index}>{ingredient}</Box>
+                <Box key={index} mb={3}>
+                  {ingredient}
+                </Box>
               ))}
             </Box>
           </Box>
-          <Box>
-            <Labels
-              labelType='Health labels'
-              labels={recipe.healthLabels}
-              color='#E6D2FC'
-            />
-            <Labels
-              labelType='Diet'
-              labels={recipe.dietLabels}
-              color='#C0F6D1'
-            />
+          <Box ml={3}>
+            <Labels labels={recipe.healthLabels} color='#E6D2FC' />
+            <Labels labels={recipe.dietLabels} color='#C0F6D1' />
             <Labels
               labelType='Cautions'
               labels={recipe.cautions}
               color='#FF6D76'
             />
-            <Heading size='md' mt={4}>
-              Total nutrients:
-            </Heading>
             <Labels
               labelType='Total nutrients'
               labels={recipe.totalNutrients}
