@@ -57,6 +57,7 @@ export const Labels = ({ labelType, labels, color, filter }) => {
             p={1}
             borderRadius='md'
             m={1}
+            ml={2}
           >
             {label.label || label}
           </Text>

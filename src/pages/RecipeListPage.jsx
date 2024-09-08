@@ -4,7 +4,7 @@ import { data } from '../utils/data';
 import { SearchBar } from '../components/logic/SearchBar';
 import { RecipeItemCard } from '../components/ui/RecipeItemCard';
 
-export const RecipeListPage = () => {
+export const RecipeListPage = ({ onRecipeClick }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredRecipes = data.hits.filter(
@@ -44,7 +44,11 @@ export const RecipeListPage = () => {
           mb={5}
         >
           {filteredRecipes.map((hit) => (
-            <RecipeItemCard key={hit.recipe.label} recipe={hit.recipe} />
+            <RecipeItemCard
+              key={hit.recipe.label}
+              recipe={hit.recipe}
+              onClick={() => onRecipeClick(hit.recipe)}
+            />
           ))}
         </Grid>
       )}
