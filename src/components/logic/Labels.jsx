@@ -22,7 +22,7 @@ export const Labels = ({ labelType, labels, color, filter }) => {
             bg={color}
             p={1}
             borderRadius='md'
-            m={1}
+            my={1}
             ml={2}
           >
             {label.label || label}
