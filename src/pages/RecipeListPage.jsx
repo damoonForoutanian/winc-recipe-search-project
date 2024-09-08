@@ -1,52 +1,53 @@
+import { Center, Heading, Grid, Box } from '@chakra-ui/react';
 import { useState } from 'react';
-import { Center, Grid, Heading, Box } from '@chakra-ui/react';
+import { data } from '../utils/data';
 import { SearchBar } from '../components/logic/SearchBar';
 import { RecipeItemCard } from '../components/ui/RecipeItemCard';
-import { data } from '../utils/data';
 
-export const RecipeListPage = ({ onRecipeClick }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+export const RecipeListPage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredRecipes = data.hits.filter((hit) => {
-    const recipe = hit.recipe;
-    const query = searchQuery.toLowerCase();
-    return (
-      recipe.label.toLowerCase().includes(query) ||
-      recipe.healthLabels.some((label) => label.toLowerCase().includes(query))
-    );
-  });
+  const filteredRecipes = data.hits.filter(
+    (hit) =>
+      hit.recipe.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      hit.recipe.healthLabels.some((label) =>
+        label.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+  );
 
   return (
-    <Box bg='#2563DA' minH='100vh' p={5}>
-      <Center flexDir='column'>
-        <Heading color='white' mb={5}>
+    <Box bg='#2563DA' minH='100vh' p={8}>
+      {' '}
+      <Center flexDir='column' mb={8}>
+        {' '}
+        <Heading color='#F9F6EE' mb={5}>
           Winc Recipe Checker
         </Heading>
         <SearchBar
-          placeholder='Search recipes'
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
-        {filteredRecipes.length === 0 ? (
-          <Heading size='md' mt={3} color='white'>
-            No matches found
-          </Heading>
-        ) : (
-          <Grid
-            templateColumns='repeat(auto-fill, minmax(250px, 1fr))'
-            gap={8}
-            mt={8}
-          >
-            {filteredRecipes.map((hit, index) => (
-              <RecipeItemCard
-                key={hit.recipe.label + index}
-                recipe={hit.recipe}
-                onClick={() => onRecipeClick(hit.recipe)}
-              />
-            ))}
-          </Grid>
-        )}
       </Center>
+      {filteredRecipes.length === 0 ? (
+        <Center color='#F9F6EE'>No matches found</Center>
+      ) : (
+        <Grid
+          templateColumns={{
+            base: '1fr',
+            md: 'repeat(2, 1fr)',
+            lg: 'repeat(3, 1fr)',
+            xl: 'repeat(4, 1fr)',
+            '2xl': 'repeat(5, 1fr)',
+          }}
+          gap={8}
+          mx={{ base: 5, md: 8, lg: 13 }}
+          mb={5}
+        >
+          {filteredRecipes.map((hit) => (
+            <RecipeItemCard key={hit.recipe.label} recipe={hit.recipe} />
+          ))}
+        </Grid>
+      )}
     </Box>
   );
 };
