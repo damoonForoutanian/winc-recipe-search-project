@@ -23,15 +23,27 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
           />
         </Flex>
         <Flex justifyContent='center' mt={3}>
-          <Image
-            src={recipe.image}
-            alt={recipe.label}
-            objectFit='cover'
+          <Box
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+            position='relative'
+            overflow='hidden'
             borderRadius='md'
-            mt={5}
             h={{ base: '37vh', md: '55vh' }}
-            maxH={610}
-          />
+            width={{ base: '100%', md: '55%' }}
+          >
+            <Image
+              src={recipe.image}
+              alt={recipe.label}
+              objectFit='cover'
+              h='100%'
+              w='auto'
+              maxH='55vh'
+              maxW='100%'
+              margin='auto'
+            />
+          </Box>
         </Flex>
         <Flex justifyContent='space-between' mt={5}>
           <Box mr={3}>
