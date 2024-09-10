@@ -2,6 +2,7 @@ import { Box, Image, Heading, Text, Flex, IconButton } from '@chakra-ui/react';
 import { Card } from '../components/ui/Card';
 import { Labels } from '../components/logic/Labels';
 import { ArrowBackIcon } from '@chakra-ui/icons';
+import './RecipeItemPage.css';
 
 export const RecipeItemPage = ({ recipe, onBack }) => {
   return (
@@ -9,12 +10,12 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
       <Card>
         <Flex justifyContent='space-between' alignItems='center'>
           <IconButton
-            icon={<ArrowBackIcon />}
+            className='animated-button'
+            icon={<ArrowBackIcon className='icon' />}
             onClick={onBack}
             aria-label='Go Back'
-            bg='transparent'
-            color='#2563DA'
             size='lg'
+            variant='unstyled'
           />
           <Image
             src='/src/assets/WincAcademy-logo.png'
