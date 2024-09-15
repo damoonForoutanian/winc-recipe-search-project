@@ -10,7 +10,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
 
   return (
     <Box
-      bg='#F9F6EE'
+      bg={theme.colors.white}
       borderRadius='lg'
       overflow='hidden'
       onClick={onClick}
@@ -30,8 +30,11 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
         <Heading size='md' textAlign='center' mb={5}>
           {recipe.label}
         </Heading>
-        <Labels labels={filteredHealthLabels} color='#E6D2FC' />
-        <Labels labels={recipe.dietLabels} color='#C0F6D1' />
+        <Labels
+          labels={filteredHealthLabels}
+          color={theme.colors.healthPurple}
+        />
+        <Labels labels={recipe.dietLabels} color={theme.colors.dietGreen} />
         <Text my={2} ml={2}>
           Dish: <strong>{recipe.dishType?.join(', ')}</strong>
         </Text>
@@ -40,7 +43,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
             <Text mb={-2} ml={2}>
               Cautions:
             </Text>
-            <Labels labels={recipe.cautions} color='#FF6D76' />
+            <Labels labels={recipe.cautions} color={theme.colors.cautionRed} />
           </Box>
         )}
       </Box>

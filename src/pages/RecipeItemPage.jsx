@@ -15,7 +15,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
   const theme = useTheme();
 
   return (
-    <Box bg='#2563DA' minH='100vh' p={5}>
+    <Box bg={theme.colors.darkBlue} minH='100vh' p={5}>
       <Card>
         <Flex justifyContent='space-between' alignItems='center'>
           <IconButton
@@ -23,7 +23,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
             onClick={onBack}
             aria-label='Go Back'
             bg='transparent'
-            color='#2563DA'
+            color={theme.colors.darkBlue}
             size='lg'
           />
           <Image
@@ -82,12 +82,15 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
             </Box>
           </Box>
           <Box ml={3}>
-            <Labels labels={recipe.healthLabels} color='#E6D2FC' />
-            <Labels labels={recipe.dietLabels} color='#C0F6D1' />
+            <Labels
+              labels={recipe.healthLabels}
+              color={theme.colors.healthPurple}
+            />
+            <Labels labels={recipe.dietLabels} color={theme.colors.dietGreen} />
             <Labels
               labelType='Cautions'
               labels={recipe.cautions}
-              color='#FF6D76'
+              color={theme.colors.cautionRed}
             />
             <Labels
               labelType='Total nutrients'
@@ -101,7 +104,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
                 'CHOLE',
                 'NA',
               ]}
-              color='#99B7FA'
+              color={theme.colors.nutrientBlue}
             />
           </Box>
         </Flex>

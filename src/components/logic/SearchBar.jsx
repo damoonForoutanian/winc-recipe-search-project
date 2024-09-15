@@ -8,11 +8,11 @@ export const SearchBar = ({ value, onChange }) => {
       value={value}
       onChange={onChange}
       placeholder='Search recipes'
-      _placeholder={{ color: '#7299E6' }}
+      _placeholder={{ color: theme.colors.lightBlue }}
       size='lg'
       maxW='610px'
-      bg='#F9F6EE'
-      color='#2563DA'
+      bg={theme.colors.white}
+      color={theme.colors.darkBlue}
       border='none'
       borderRadius='md'
       boxShadow='md'
