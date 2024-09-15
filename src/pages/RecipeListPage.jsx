@@ -22,7 +22,7 @@ export const RecipeListPage = ({ onRecipeClick }) => {
       {' '}
       <Center flexDir='column' mb={8}>
         {' '}
-        <Heading color={theme.colors.white} mb={5}>
+        <Heading color={theme.colors.whiteish} mb={5}>
           Winc Recipe Checker
         </Heading>
         <SearchBar
@@ -31,7 +31,7 @@ export const RecipeListPage = ({ onRecipeClick }) => {
         />
       </Center>
       {filteredRecipes.length === 0 ? (
-        <Center color={theme.colors.white}>No matches found</Center>
+        <Center color={theme.colors.whiteish}>No matches found</Center>
       ) : (
         <Grid
           templateColumns={{

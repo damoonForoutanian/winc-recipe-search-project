@@ -10,7 +10,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
 
   return (
     <Box
-      bg={theme.colors.white}
+      bg={theme.colors.whiteish}
       borderRadius='lg'
       overflow='hidden'
       onClick={onClick}

@@ -11,7 +11,7 @@ export const SearchBar = ({ value, onChange }) => {
       _placeholder={{ color: theme.colors.lightBlue }}
       size='lg'
       maxW='610px'
-      bg={theme.colors.white}
+      bg={theme.colors.whiteish}
       color={theme.colors.darkBlue}
       border='none'
       borderRadius='md'
