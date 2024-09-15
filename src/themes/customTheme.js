@@ -12,7 +12,7 @@ const customTheme = extendTheme({
   },
   colors: {
     whiteish: '#F9F6EE',
-    grayish: '#B0B0B0',
+    grayish: '#A0A0A0',
     blackish: '#2F2F2F',
     darkBlue: '#2563DA',
     lightBlue: '#7299E6',

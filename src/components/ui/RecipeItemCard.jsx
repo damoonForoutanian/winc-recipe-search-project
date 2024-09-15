@@ -24,7 +24,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
         h='144px'
       />
       <Box p={3}>
-        <Text color='gray.500' textAlign='center' mb={2}>
+        <Text color={theme.colors.grayish} textAlign='center' mb={2}>
           {recipe.mealType?.join(', ').toUpperCase()}
         </Text>
         <Heading size='md' textAlign='center' mb={5}>
