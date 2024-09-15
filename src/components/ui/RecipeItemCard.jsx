@@ -1,10 +1,12 @@
-import { Box, Image, Heading, Text } from '@chakra-ui/react';
+import { useTheme, Box, Image, Heading, Text } from '@chakra-ui/react';
 import { Labels } from '../logic/Labels';
 
 export const RecipeItemCard = ({ recipe, onClick }) => {
   const filteredHealthLabels = recipe.healthLabels.filter(
     (label) => label === 'Vegan' || label === 'Vegetarian'
   );
+
+  const theme = useTheme();
 
   return (
     <Box

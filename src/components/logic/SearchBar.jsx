@@ -1,6 +1,8 @@
-import { Input } from '@chakra-ui/react';
+import { useTheme, Input } from '@chakra-ui/react';
 
 export const SearchBar = ({ value, onChange }) => {
+  const theme = useTheme();
+
   return (
     <Input
       value={value}

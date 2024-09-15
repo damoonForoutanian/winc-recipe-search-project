@@ -1,4 +1,4 @@
-import { Center, Heading, Grid, Box } from '@chakra-ui/react';
+import { useTheme, Center, Heading, Grid, Box } from '@chakra-ui/react';
 import { useState } from 'react';
 import { data } from '../utils/data';
 import { SearchBar } from '../components/logic/SearchBar';
@@ -14,6 +14,8 @@ export const RecipeListPage = ({ onRecipeClick }) => {
         label.toLowerCase().includes(searchTerm.toLowerCase())
       )
   );
+
+  const theme = useTheme();
 
   return (
     <Box bg='#2563DA' minH='100vh' p={8}>

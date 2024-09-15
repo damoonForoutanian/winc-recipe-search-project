@@ -1,9 +1,19 @@
-import { Box, Image, Heading, Text, Flex, IconButton } from '@chakra-ui/react';
+import {
+  useTheme,
+  Box,
+  Image,
+  Heading,
+  Text,
+  Flex,
+  IconButton,
+} from '@chakra-ui/react';
 import { Card } from '../components/ui/Card';
 import { Labels } from '../components/logic/Labels';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 
 export const RecipeItemPage = ({ recipe, onBack }) => {
+  const theme = useTheme();
+
   return (
     <Box bg='#2563DA' minH='100vh' p={5}>
       <Card>
