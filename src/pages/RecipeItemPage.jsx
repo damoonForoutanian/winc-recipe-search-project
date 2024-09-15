@@ -10,9 +10,14 @@ import {
 import { Card } from '../components/ui/Card';
 import { Labels } from '../components/logic/Labels';
 import { ArrowBackIcon } from '@chakra-ui/icons';
+import { useEffect } from 'react';
 
 export const RecipeItemPage = ({ recipe, onBack }) => {
   const theme = useTheme();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Box bg={theme.colors.darkBlue} minH='100vh' p={5}>
