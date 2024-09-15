@@ -50,7 +50,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
             <Heading size='sm' color='gray.500' mb={3}>
               {recipe.mealType?.join(', ').toUpperCase()}
             </Heading>
-            <Heading size='lg' isTruncated my={5}>
+            <Heading size='lg' my={5}>
               {recipe.label}
             </Heading>
             <Box mt={2}>
