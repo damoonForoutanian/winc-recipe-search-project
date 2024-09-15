@@ -3,8 +3,16 @@
 import { extendTheme } from '@chakra-ui/react';
 
 const customTheme = extendTheme({
+  styles: {
+    global: {
+      'html, body': {
+        color: 'blackish', // Use the color defined in your theme
+      },
+    },
+  },
   colors: {
     whiteish: '#F9F6EE',
+    grayish: '#B0B0B0',
     blackish: '#2F2F2F',
     darkBlue: '#2563DA',
     lightBlue: '#7299E6',
