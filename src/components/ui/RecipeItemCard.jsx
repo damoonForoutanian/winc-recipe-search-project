@@ -25,7 +25,7 @@ export const RecipeItemCard = ({ recipe, onClick }) => {
         <Text color='gray.500' textAlign='center' mb={2}>
           {recipe.mealType?.join(', ').toUpperCase()}
         </Text>
-        <Heading size='md' isTruncated textAlign='center' mb={5}>
+        <Heading size='md' textAlign='center' mb={5}>
           {recipe.label}
         </Heading>
         <Labels labels={filteredHealthLabels} color='#E6D2FC' />
