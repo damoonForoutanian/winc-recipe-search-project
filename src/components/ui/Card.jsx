@@ -6,7 +6,8 @@ export const Card = ({ children }) => {
   return (
     <Box
       bg={theme.colors.whiteish}
-      mx={{ xl: 233 }}
+      my={{ lg: 5, xl: 3 }}
+      mx={{ lg: 89, xl: 377 }}
       p={5}
       borderRadius='md'
       shadow='md'

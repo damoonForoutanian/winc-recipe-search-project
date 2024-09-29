@@ -6,7 +6,7 @@ const customTheme = extendTheme({
   styles: {
     global: {
       'html, body': {
-        color: 'blackish', // Use the color defined in your theme
+        color: 'blackish',
       },
     },
   },

@@ -45,7 +45,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
             position='relative'
             overflow='hidden'
             borderRadius='md'
-            h={{ base: '37vh', md: '55vh' }}
+            maxH={{ base: '21vh', md: '34vh', lg: '55vh', xl: '89vh' }}
             width={{ base: '100%', md: '55%' }}
           >
             <Image
@@ -61,7 +61,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
           </Box>
         </Flex>
         <Flex justifyContent='space-between' mt={5}>
-          <Box mr={3}>
+          <Box mr={{ base: 1, md: 2, lg: 3, xl: 5 }}>
             <Heading size='sm' color='gray.500' mb={3}>
               {recipe.mealType?.join(', ').toUpperCase()}
             </Heading>
@@ -86,7 +86,7 @@ export const RecipeItemPage = ({ recipe, onBack }) => {
               ))}
             </Box>
           </Box>
-          <Box ml={3}>
+          <Box ml={{ base: 1, md: 2, lg: 3, xl: 5 }}>
             <Labels
               labels={recipe.healthLabels}
               color={theme.colors.healthPurple}
